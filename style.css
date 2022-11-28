@@ -1,30 +1,69 @@
+:root {
+    --neon-buttons: hsl(317 100% 54%);
+    --neon-tasks: hsl(317 100% 54%);
+}
+
 main {
-    background-color: rgb(185, 179, 179);
+    background-color: hsl(240 6% 17%);
 }
 
 .container {
     width: 50%;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
+
 
 .task {
     border-style: solid;
     border-radius: 5px;
     border-width: 0.5px;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--neon-buttons);
+
 }
 
-.buttons, .addbutton {
+.buttons {
     float: right; 
+    color: var(--neon-buttons);
+    border-color: hsl(240 6% 17%);
 }
+
+.addbutton {
+    color: var(--neon-buttons);
+    border-color: hsl(240 6% 17%);
+}
+
 
 #list {
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.row {
-    margin: 10px;
+.additem {
+    padding: 20px;
 }
+
+.taskitem {
+    color: white;
+}
+    
+.backgroundcolor-col {
+    background-color: hsl(240 6% 17%);
+}
+
+h1, h2 {
+    color: white;
+}
+
+
 /* Input Field */
 
