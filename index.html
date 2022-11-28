@@ -12,43 +12,48 @@
 <body>
     <main class="container mt-5">
         <div class="row">
-            <div class="col bg-light">
-              <h1>To Do List</h1>
-              <section id="addtask">
-                <input label="Input Field">
-                <span><button class="addbutton btn btn-outline-info">Add</button>
-                </span>
-             </section>
+            <div class="additem col backgroundcolor-col pb-2">
+                <div class="row">
+                    <h1>To Do List</h1>
+                </div>
+                <div class="row row-cols-md-auto">
+                    <div class="col-12 flex-grow-1">
+                    <input type="text" class="form-control" id="addItemInput" placeholder="New Task">
+                    </div>
+                    <div class="col-12">
+                    <button type=button class="addbutton btn btn-outline-info float-end">Add</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col bg-light">
+            <div class="col backgroundcolor-col">
                 <h2>Tasks</h2>
                 <section id="list">
                     <div class="task">
-                        <span> Delete the task</span>
-                        <span class="buttons">
-                            <button class="btn btn-outline-warning">Edit</button>
-                            <button class="btn btn-outline-danger">Delete</button>
-                            <button class="btn btn-outline-success">Done</button>
-                        </span>
+                        <div class="taskitem"> Delete the task</div>
+                        <div class="buttons">
+                            <button class="buttons btn btn-outline-warning">Edit</button>
+                            <button class="buttons btn btn-outline-danger">Delete</button>
+                            <button class="buttons btn btn-outline-success">Done</button>
+                        </div>
                     </div>
                     <div class="task">
-                        <span> Edit the task</span>
-                        <span class="buttons">
-                            <button class="btn btn-outline-warning">Edit</button>
-                            <button class="btn btn-outline-danger">Delete</button>
-                            <button class="btn btn-outline-success">Done</button>
-                        </span>
+                        <div class="taskitem"> Edit the task</div>
+                        <div class="buttons">
+                            <button class="buttons btn btn-outline-warning">Edit</button>
+                            <button class="buttons btn btn-outline-danger">Delete</button>
+                            <button class="buttons btn btn-outline-success">Done</button>
+                        </div>
                     </div>
                     <div class="task">
-                        <span> Mark the task as done</span>
-                        <span class="buttons">
-                            <button class="btn btn-outline-warning">Edit</button>
-                            <button class="btn btn-outline-danger">Delete</button>
-                            <button class="btn btn-outline-success">Done</button>
-                        </span>
+                        <div class="taskitem"> Mark the task as done</div>
+                        <div class="buttons">
+                            <button class="buttons btn btn-outline-warning">Edit</button>
+                            <button class="buttons btn btn-outline-danger">Delete</button>
+                            <button class="buttons btn btn-outline-success">Done</button>
+                        </div>
                     </div>
                     
                  </section>
