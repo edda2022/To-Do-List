@@ -1,0 +1,30 @@
+main {
+    background-color: rgb(185, 179, 179);
+}
+
+.container {
+    width: 50%;
+    padding: 30px;
+}
+
+.task {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 0.5px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.buttons, .addbutton {
+    float: right; 
+}
+
+#list {
+    margin: 10px;
+}
+
+.row {
+    margin: 10px;
+}
+/* Input Field */
+
