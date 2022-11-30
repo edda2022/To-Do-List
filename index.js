@@ -41,9 +41,19 @@ const tasks = [
   
        // Done action
        const doneAction = () => {
+          
+        if (doneButton.innerText === 'DONE'){
           listSectionChild.style.textDecoration = 'line-through' 
-          listSectionChild.style.textDecorationColor = 'green' 
-       }
+          listSectionChild.style.textDecorationThickness = '0.25rem'
+          listSectionChild.style.textDecorationColor = 'hsl(317 100% 54%)' 
+          doneButton.innerText='UNDONE';
+        } else {
+          listSectionChild.style.textDecoration = 'none' 
+          doneButton.innerText='DONE';
+        }
+        
+     }
+
   
        const EditAction = () => {
           listSectionChild.style.textDecoration = 'none'
