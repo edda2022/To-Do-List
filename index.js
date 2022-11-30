@@ -1,15 +1,15 @@
 const tasks = [
     {
      id: 1,
-     description: "Delete the task",
+     description: "Finish group project",
     },
     {
     id: 2,
-    description: "Edit the task",
+    description: "Buy christmas gifts",
     },
     {
     id: 3,
-    description: "Mark the task as done",
+    description: "Get the kids from Kindergarten",
     },
 ];
 
