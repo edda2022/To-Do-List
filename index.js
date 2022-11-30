@@ -1,5 +1,5 @@
 const tasks = [
-    'Add Task','Delete Task',
+    'Finish group project','Buy christmas presents',
   ]
   
   const createTask = (task) => {
