@@ -1,5 +1,5 @@
 const tasks = [
-    'Finish group project','Buy christmas presents',
+    'Finish group project','Buy christmas presents', 'Get a coffee'
   ]
   
   const createTask = (task) => {
@@ -10,8 +10,9 @@ const tasks = [
       // div with class taskitem
       const listSectionChild = document.createElement("div");
       listSectionChild.classList.add("taskitem");
-  
+
       listSectionChild.innerText = task;
+
   
       // div with class buttons
       const taskButtons = document.createElement("div");
@@ -32,16 +33,30 @@ const tasks = [
        const doneButton = document.createElement("button");
        doneButton.classList.add("buttons", "btn", "btn-outline-success")
        doneButton.innerText = 'DONE';
+
+       //edit action
+       const editAction = () => {
+        if(EditButton.innerText === 'EDIT') {
+          listSectionChild.setAttribute("contenteditable", "true");
+          listSectionChild.style.border = 'solid';
+          EditButton.innerText = 'SAVE';
+        } else {
+          listSectionChild.setAttribute("contenteditable", "false");
+          listSectionChild.style.border = 'none';
+          EditButton.innerText = 'DONE';
+        }
+        
+       } 
   
        // Delete action
        const delAction = () => {
+          alert('Deleting the Task!!')
           listSection.remove();
        }
   
   
        // Done action
        const doneAction = () => {
-          
         if (doneButton.innerText === 'DONE'){
           listSectionChild.style.textDecoration = 'line-through' 
           listSectionChild.style.textDecorationThickness = '0.25rem'
@@ -51,22 +66,16 @@ const tasks = [
           listSectionChild.style.textDecoration = 'none' 
           doneButton.innerText='DONE';
         }
-        
      }
-
-  
-       const EditAction = () => {
-          listSectionChild.style.textDecoration = 'none'
-       }
   
       //  // calling the delete action with eventHandler
        deleteButton.addEventListener('click',delAction);
   
-       //  // calling the delete action with eventHandler
+       //  // calling the done action with eventHandler
         doneButton.addEventListener('click',doneAction);
   
-       //  // calling the delete action with eventHandler
-       EditButton.addEventListener('click',EditAction);
+       //  // calling the edir action with eventHandler
+       EditButton.addEventListener('click',editAction);
   
        
       
@@ -101,17 +110,32 @@ const tasks = [
   
   displayTasks(tasks);
   
-  const addButton = document.querySelector("#addInputButton")
-          let textInput;
-          const inputRet = () => {
-          textInput = document.querySelector("#addItemInput").value;
-          // console.log(textInput)
-          if (textInput.length !== 0) {
-          tasks.unshift(textInput)
-           }
-           displayTasks(tasks);
-          }
-  
-          addButton.addEventListener('click',inputRet);
+const addButton = document.querySelector("#addInputButton")
+
+const inputRet = () => {
+    textInput = document.querySelector("#addItemInput").value;
+    if (textInput.length !== 0) {
+    tasks.unshift(textInput)
+    }
+    displayTasks(tasks);
+    document.querySelector("#addItemInput").value = "" //deletes the task after adding
+    }
+
+addButton.addEventListener('click',inputRet);
+
+//OR add a task with enter-key
+const inputField = document.querySelector("#addItemInput")
+inputField.addEventListener('keydown',(e) => {
+    if (e.key === 'Enter') {
+        textInput = document.querySelector("#addItemInput").value;
+    if (textInput.length !== 0) {
+    tasks.unshift(textInput)
+    }
+    displayTasks(tasks);
+    document.querySelector("#addItemInput").value = "" //deletes the task after adding
+    }
+    }
+);
+
   
   
