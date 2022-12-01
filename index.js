@@ -1,6 +1,15 @@
-const tasks = [
-    'Finish group project','Buy christmas presents', 'Get a coffee'
-  ]
+
+
+
+  // const tasks = [
+  //  'Finish group project','Buy christmas presents', 'Get a coffee'
+  // ]
+
+//Local Storage
+const localStorageItems = localStorage.getItem("tasks");
+const tasks = localStorageItems ? JSON.parse(localStorageItems) : [
+  'Finish group project','Buy christmas presents', 'Get a coffee'
+];
   
   const createTask = (task) => {
       // div with class task
@@ -39,6 +48,8 @@ const tasks = [
         if(EditButton.innerText === 'EDIT') {
           listSectionChild.setAttribute("contenteditable", "true");
           listSectionChild.style.border = 'solid';
+          listSectionChild.style.borderRadius = '5px';
+          listSectionChild.style.padding = '5px';
           EditButton.innerText = 'SAVE';
         } else {
           listSectionChild.setAttribute("contenteditable", "false");
@@ -116,6 +127,7 @@ const inputRet = () => {
     textInput = document.querySelector("#addItemInput").value;
     if (textInput.length !== 0) {
     tasks.unshift(textInput)
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     }
     displayTasks(tasks);
     document.querySelector("#addItemInput").value = "" //deletes the task after adding
@@ -130,6 +142,7 @@ inputField.addEventListener('keydown',(e) => {
         textInput = document.querySelector("#addItemInput").value;
     if (textInput.length !== 0) {
     tasks.unshift(textInput)
+    localStorage.setItem("tasks", JSON.stringify(tasks));
     }
     displayTasks(tasks);
     document.querySelector("#addItemInput").value = "" //deletes the task after adding
@@ -137,5 +150,3 @@ inputField.addEventListener('keydown',(e) => {
     }
 );
 
-  
-  
