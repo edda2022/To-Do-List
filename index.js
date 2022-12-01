@@ -63,6 +63,7 @@ const tasks = localStorageItems ? JSON.parse(localStorageItems) : [
        const delAction = () => {
           alert('Deleting the Task!!')
           listSection.remove();
+          localStorage.removeItem("tasks");
        }
   
   
