@@ -43,7 +43,7 @@ const tasks = [
         } else {
           listSectionChild.setAttribute("contenteditable", "false");
           listSectionChild.style.border = 'none';
-          EditButton.innerText = 'DONE';
+          EditButton.innerText = 'EDIT';
         }
         
        } 
