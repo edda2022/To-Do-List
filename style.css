@@ -93,6 +93,8 @@ h1, h2 {
     text-shadow:  0 0 0.5em white;
 }
 
-
+p  {
+    color: aliceblue;
+}
 /* Input Field */
 
