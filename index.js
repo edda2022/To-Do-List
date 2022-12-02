@@ -169,7 +169,7 @@ const addDone = () => {
 }
 
 const addUndone = () => {
-  undoneCount 
+  undoneCount ++
   undoneTasks.innerText=undoneCount;
 }
 
