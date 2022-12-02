@@ -61,9 +61,10 @@ const tasks = localStorageItems ? JSON.parse(localStorageItems) : [
   
        // Delete action
        const delAction = () => {
-          alert('Deleting the Task!!')
+        if (window.confirm("Delete the task?")) {
           listSection.remove();
           localStorage.removeItem("tasks");
+        }
        }
   
   
@@ -74,9 +75,11 @@ const tasks = localStorageItems ? JSON.parse(localStorageItems) : [
           listSectionChild.style.textDecorationThickness = '0.25rem'
           listSectionChild.style.textDecorationColor = 'hsl(317 100% 54%)' 
           doneButton.innerText='UNDONE';
+          addDone();
         } else {
           listSectionChild.style.textDecoration = 'none' 
           doneButton.innerText='DONE';
+          addUndone();
         }
      }
   
@@ -150,4 +153,23 @@ inputField.addEventListener('keydown',(e) => {
     }
     }
 );
+
+
+let undoneTasks = document.querySelector("#display");
+
+const wordCount = document.body.innerText.split(/\s/);
+const filterUndone = wordCount.filter(word => word === 'DONE');
+undoneCount = filterUndone.length;
+undoneTasks.innerText=undoneCount;
+
+
+const addDone = () => {
+  undoneCount --
+  undoneTasks.innerText=undoneCount;
+}
+
+const addUndone = () => {
+  undoneCount 
+  undoneTasks.innerText=undoneCount;
+}
 
