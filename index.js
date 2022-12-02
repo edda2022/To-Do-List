@@ -135,6 +135,7 @@ const inputRet = () => {
     }
     displayTasks(tasks);
     document.querySelector("#addItemInput").value = "" //deletes the task after adding
+    addUndone();
     }
 
 addButton.addEventListener('click',inputRet);
@@ -150,6 +151,7 @@ inputField.addEventListener('keydown',(e) => {
     }
     displayTasks(tasks);
     document.querySelector("#addItemInput").value = "" //deletes the task after adding
+    addUndone();
     }
     }
 );
